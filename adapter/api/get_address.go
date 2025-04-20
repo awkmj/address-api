@@ -9,7 +9,6 @@ import (
 	"github.com/awjmj/address-api/core/domain"
 	"github.com/awjmj/address-api/infra/client"
 	"github.com/awjmj/address-api/infra/client/response"
-	"github.com/spf13/viper"
 )
 
 type GetAddress struct {
@@ -18,7 +17,7 @@ type GetAddress struct {
 
 func NewGetAddress() *GetAddress {
 
-	url := viper.Get("ADDRESS_API_URL").(string)
+	url := "https://viacep.com.br"
 	httpClient := client.NewHttpClient(client.WithUrl(url))
 	return &GetAddress{client: httpClient}
 }
