@@ -12,6 +12,8 @@ WORKDIR /app
 
 COPY --from=build /app/api ./
 
+COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+
 ENV ADDRESS_API_URL="https://viacep.com.br"
 
 EXPOSE 3000
